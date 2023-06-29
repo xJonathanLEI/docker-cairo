@@ -10,14 +10,15 @@ WORKDIR /src
 RUN git clone --recursive -b v$CAIRO_VERSION https://github.com/starkware-libs/cairo
 
 WORKDIR /src/cairo
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-compiler
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-formatter
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-language-server
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-runner
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-sierra-to-casm
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-starknet
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-syntax-codegen
-RUN cargo install --locked --root /output --path ./crates/cairo-lang-test-runner
+RUN cargo install --locked --root /output --path ./crates/bin/cairo-run
+RUN cargo install --locked --root /output --path ./crates/bin/cairo-test
+RUN cargo install --locked --root /output --path ./crates/bin/cairo-format
+RUN cargo install --locked --root /output --path ./crates/bin/cairo-compile
+RUN cargo install --locked --root /output --path ./crates/bin/sierra-compile
+RUN cargo install --locked --root /output --path ./crates/bin/generate-syntax
+RUN cargo install --locked --root /output --path ./crates/bin/starknet-compile
+RUN cargo install --locked --root /output --path ./crates/bin/cairo-language-server
+RUN cargo install --locked --root /output --path ./crates/bin/starknet-sierra-compile
 
 FROM alpine:latest
 
