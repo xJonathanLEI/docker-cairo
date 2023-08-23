@@ -19,6 +19,7 @@ RUN cargo install --locked --root /output --path ./crates/bin/generate-syntax
 RUN cargo install --locked --root /output --path ./crates/bin/starknet-compile
 RUN cargo install --locked --root /output --path ./crates/bin/cairo-language-server
 RUN cargo install --locked --root /output --path ./crates/bin/starknet-sierra-compile
+RUN cargo install --locked --root /output --path ./crates/bin/starknet-sierra-extract-code
 
 FROM alpine:latest
 
