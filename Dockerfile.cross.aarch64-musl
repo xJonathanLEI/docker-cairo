@@ -17,7 +17,6 @@ RUN cargo install --locked --root /output --target aarch64-unknown-linux-musl --
 RUN cargo install --locked --root /output --target aarch64-unknown-linux-musl --path ./crates/bin/starknet-compile
 RUN cargo install --locked --root /output --target aarch64-unknown-linux-musl --path ./crates/bin/cairo-language-server
 RUN cargo install --locked --root /output --target aarch64-unknown-linux-musl --path ./crates/bin/starknet-sierra-compile
-RUN cargo install --locked --root /output --target aarch64-unknown-linux-musl --path ./crates/bin/starknet-sierra-extract-code
 
 FROM --platform=linux/arm64/v8 alpine:latest
 
