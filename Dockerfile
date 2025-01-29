@@ -13,13 +13,16 @@ WORKDIR /src/cairo
 RUN cargo install --locked --root /output --path ./crates/bin/cairo-run
 RUN cargo install --locked --root /output --path ./crates/bin/cairo-test
 RUN cargo install --locked --root /output --path ./crates/bin/cairo-format
+RUN cargo install --locked --root /output --path ./crates/bin/get-lowering
 RUN cargo install --locked --root /output --path ./crates/bin/cairo-compile
+RUN cargo install --locked --root /output --path ./crates/bin/cairo-execute
 RUN cargo install --locked --root /output --path ./crates/bin/sierra-compile
 RUN cargo install --locked --root /output --path ./crates/bin/generate-syntax
 RUN cargo install --locked --root /output --path ./crates/bin/starknet-compile
 RUN cargo install --locked --root /output --path ./crates/bin/cairo-language-server
 RUN cargo install --locked --root /output --path ./crates/bin/starknet-sierra-compile
 RUN cargo install --locked --root /output --path ./crates/bin/starknet-sierra-extract-code
+RUN cargo install --locked --root /output --path ./crates/bin/starknet-sierra-upgrade-validate
 
 FROM alpine:latest
 
